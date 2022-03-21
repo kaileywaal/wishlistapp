@@ -1,0 +1,247 @@
+/* IMPORT FOR ICONS */
+@import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
+
+/* COLOR VARIABLES */
+:root {
+  --color-green-darker: #94ce9c;
+  --color-blue: #67a9ed;
+  --color-yellow: #fec271;
+  --color-red: #df6668;
+  --color-light: #ebeef3;
+  --color-light-darker: #d5dde9;
+  --color-white: #fff;
+  --color-green-lighter: #b4ceb8;
+  --color-blue-lighter: #b1cef0;
+  --color-yellow-lighter: #ffd69f;
+  --color-red-lighter: #eb999a;
+  --color-dark-darker: #3c3f44;
+  --color-dark-lighter: #6e6e6e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  height: 100%;
+  background-color: var(--color-light);
+}
+
+/************************** LIST ITEMS *************************/
+
+.card {
+  background-color: var(--color-white);
+  border: none;
+  box-shadow: 0px 4px 1px -1px var(--color-light-darker);
+  margin: 2vw 4vw;
+  padding: 1vw 4vw;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-item-name {
+  font-size: 2rem;
+  padding-right: 2rem;
+}
+
+.card h2 {
+  font-size: 1.6rem;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  margin: 0;
+  margin-right: 2rem;
+  display: flex;
+}
+
+.icon-button i {
+  color: var(--color-white);
+  font-size: 2rem;
+  padding: 0.75rem;
+  height: 35px;
+}
+
+/************************** POPUP *************************/
+.popup {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content h1 {
+  font-size: 3rem;
+  margin: 1rem;
+}
+
+.popup-content {
+  background-color: white;
+  position: absolute;
+  margin: auto;
+  width: 60%;
+  padding: 4rem 4rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: var(--color-dark-lighter);
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+}
+
+.options .button {
+  margin: 1rem;
+}
+
+/************************** BUTTONS *************************/
+
+.button {
+  border: none;
+  margin-top: 1rem;
+  border-radius: 10px;
+  color: var(--color-white);
+  padding: 10px 30px;
+  transition: 0.3s;
+  background-color: var(--color-dark-lighter);
+  transition: 0.3s;
+  font-size: 1.8rem;
+}
+
+.button:hover {
+  background-color: var(--color-dark-darker);
+}
+
+.icon-button {
+  border: none;
+  border-radius: 10px;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  text-decoration: none;
+  line-height: normal;
+}
+
+.icon-button a {
+  text-decoration: none;
+}
+
+.button-green {
+  background-color: var(--color-green-lighter);
+}
+
+.button-green:hover {
+  background-color: var(--color-green-darker);
+}
+
+.button-yellow {
+  background-color: var(--color-yellow-lighter);
+}
+
+.button-yellow:hover {
+  background-color: var(--color-yellow);
+}
+
+.button-red {
+  background-color: var(--color-red-lighter);
+}
+
+.button-red:hover {
+  background-color: var(--color-red);
+}
+
+.button-blue {
+  background-color: var(--color-blue-lighter);
+}
+
+.button-blue:hover {
+  background-color: var(--color-blue);
+}
+
+/************************** FORM *************************/
+/* form {
+  padding: 1rem;
+}
+
+label {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+.input-label {
+  text-align: right;
+  padding-right: 2rem;
+  align-self: flex-end;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+*/
+
+input {
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+.price input {
+  text-align: center;
+}
+
+input:focus {
+  text-decoration: underline;
+}
+
+/* form .options {
+  padding-top: 1.5rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.save {
+  padding: 10px 40px;
+} */
+
+.list-item-name {
+  width: 100%;
+}
