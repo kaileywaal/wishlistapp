@@ -1,5 +1,6 @@
 /* IMPORT FOR ICONS */
 @import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css");
 
 /* COLOR VARIABLES */
 :root {
@@ -196,27 +197,24 @@ body {
   background-color: var(--color-blue);
 }
 
-/************************** FORM *************************/
-/* form {
-  padding: 1rem;
-}
-
-label {
+/************************** ACTIONS *************************/
+.actions {
   display: flex;
-  padding: 1rem 0;
   justify-content: flex-end;
-  margin-bottom: 0;
+  margin: 2vw 4vw 0 0;
 }
 
-.input-label {
-  text-align: right;
-  padding-right: 2rem;
-  align-self: flex-end;
-  font-weight: 700;
-  text-transform: uppercase;
+.fi-sr-plus {
+  margin-right: 1rem;
   font-size: 1.6rem;
 }
-*/
+
+.add-item {
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+/************************** FORM *************************/
 
 input {
   outline: none;
@@ -244,4 +242,77 @@ input:focus {
 
 .list-item-name {
   width: 100%;
+}
+
+/************************** Login *************************/
+.signup,
+.updateProfile {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.6rem;
+  background-color: var(--color-light);
+}
+
+.container {
+  width: 50rem;
+  max-width: 85vw;
+  background-color: var(--color-white);
+  padding: 6rem 5rem;
+  border-radius: 10px;
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.container input {
+  /* background-color: var(--color-white); */
+  border: 2px solid var(--color-light);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+}
+
+.container input:focus {
+  text-decoration: none;
+}
+
+form {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1.6rem;
+  padding: 0 0 2rem 0;
+}
+
+label p {
+  padding: 0 1rem;
+}
+
+.danger {
+  background-color: var(--color-red-lighter);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.success {
+  background-color: var(--color-green-lighter);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.needOrHaveAccount {
+  padding: 2rem;
+}
+
+.needOrHaveAccount a {
+  padding-left: 0.5rem;
 }

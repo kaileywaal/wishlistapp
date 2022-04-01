@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import './style.css';
 import List from './components/list.jsx';
 import DeleteConfirmation from './components/deleteConfirmation';
+import AddItem from './components/addItem';
+import Signup from './components/signup';
+import { AuthProvider } from './contexts/authContext';
+import { BrowserRouter as Router, Routes, Switch, Route } from "react-router-dom"; 
+import Dashboard from './components/dashboard';
+import Login from './components/login';
+import UpdateProfile from './components/updateProfile';
+import PrivateRoute from './components/privateRoute';
+import ForgotPassword from './components/forgotPassword';
 
 class App extends React.Component {
   state = {
@@ -9,6 +18,7 @@ class App extends React.Component {
     deleteItemname: "",
     deleteItemId: 0,
     activeItemId: 0,
+    addItemPopupVisible: false,
     items: [
       {
         id: 1,
@@ -44,7 +54,7 @@ class App extends React.Component {
   }
 
   handleClosePopup = () => {
-    this.setState({deletePopupVisible: false, editPopupVisible: false})
+    this.setState({deletePopupVisible: false, addItemPopupVisible: false})
   }
 
   handleConfirmDelete = () => {
@@ -57,19 +67,44 @@ class App extends React.Component {
     this.setState({activeItemId: itemId});
   }
 
-  handleAddItem = () => {
-    const items = this.state.items
-    items.push({id: 4, name: "", price: 0, link: ""});
-    this.setState({items: this.state.items});
+  addItem = () => {
+    this.setState({addItemPopupVisible: true})
+    // const items = this.state.items
+    // items.push({id: 4, name: "", price: 0, link: ""});
+    // this.setState({items: this.state.items});
+  }
+
+  handleAddItem = (item) => {
+
   }
 
   render() {
     return (
-      <div>
-      <List items={this.state.items} onDelete={this.handleDelete} onEdit={this.handleEdit} onSelect={this.handleSelect}/>
-      <button onClick={this.handleAddItem}>Add item</button>
-      {this.state.deletePopupVisible ? <DeleteConfirmation onConfirm={this.handleConfirmDelete} onCancel={this.handleClosePopup} deleteItemname={this.state.deleteItemname} items={this.state.items}/> : null}
-    </div>
+      
+        <Router>
+          <AuthProvider>   
+            <Routes>
+                <Route exact path="/" element={<PrivateRoute><Dashboard/></PrivateRoute>}/>
+                <Route path="/update-profile" element={<PrivateRoute><UpdateProfile/></PrivateRoute>}/>
+                <Route path="/signup" element={<Signup/>} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/update-profile" element={<UpdateProfile/>}/>
+                <Route path="/forgot-password" element={<ForgotPassword/>}/>
+              </Routes>  
+           </AuthProvider>
+           </Router>
+
+      
+    //   <div>
+    //     <div className="actions">
+    //     <button className="add-button button button-green" onClick={this.addItem}>
+    //     <span className="add-item"><i className="fi fi-sr-plus"></i>Add item</span>
+    //       </button>
+    //       </div>
+    //       {this.state.addItemPopupVisible ? <AddItem onClose={this.handleClosePopup}/> : null}
+    //   <List items={this.state.items} onDelete={this.handleDelete} onEdit={this.handleEdit} onSelect={this.handleSelect}/>
+    //   {this.state.deletePopupVisible ? <DeleteConfirmation onConfirm={this.handleConfirmDelete} onCancel={this.handleClosePopup} deleteItemname={this.state.deleteItemname} items={this.state.items}/> : null}
+    // </div>
   );
   } 
 }
